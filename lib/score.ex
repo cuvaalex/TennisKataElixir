@@ -2,7 +2,7 @@ defmodule Score do
   @moduledoc false
 
   def spokenScore({player1, player2})
-      when player1 == player2 and player1 == 4 do
+      when player1 == player2 and player1 >= 3 do
     "deuce"
   end
 
