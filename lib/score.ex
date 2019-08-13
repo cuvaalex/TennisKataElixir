@@ -11,6 +11,7 @@ defmodule Score do
     score1 = case player1 do
       15 -> "fifteen"
       30 -> "thirty"
+      40 -> "forty"
     end
     "#{score1} love"
   end

@@ -18,4 +18,9 @@ defmodule ScoreTest do
   test "Game score 2 to 0 then return thirty, love" do
     assert "thirty love" == Score.spokenScore({30, 0})
   end
+
+  test "Game score 3 to 0 then return forty, love" do
+    assert "forty love" == Score.spokenScore({40, 0})
+  end
+
 end
