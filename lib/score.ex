@@ -36,6 +36,11 @@ defmodule Score do
     "player 1 advantage"
   end
 
+  def speak(player1, player2, :notequal)
+      when (player2 >= 4 and player2 > player1) do
+    "player 2 advantage"
+  end
+
   def speak(player1, player2, :notequal) do
     "#{speakScore(player1)} #{speakScore(player2)}"
   end

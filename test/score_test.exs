@@ -51,4 +51,8 @@ defmodule ScoreTest do
     assert "player 1 advantage" == Score.spokenScore(4,3)
   end
 
+  test "Game score 3 to 4 then return player 2 advantage" do
+    assert "player 2 advantage" == Score.spokenScore(3,4)
+  end
+
 end
