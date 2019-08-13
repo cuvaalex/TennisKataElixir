@@ -8,6 +8,10 @@ defmodule Score do
   end
 
   def spokenScore({player1, player2}) do
-    "fifteen love"
+    score1 = case player1 do
+      15 -> "fifteen"
+      30 -> "thirty"
+    end
+    "#{score1} love"
   end
 end
