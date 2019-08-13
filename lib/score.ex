@@ -2,9 +2,15 @@ defmodule Score do
   @moduledoc false
 
   def spokenScore({player1, player2})
+      when player1 == player2 and player1 == 4 do
+    "deuce"
+  end
+
+  def spokenScore({player1, player2})
     when player1 == player2 do
     "#{speak(player1)} all"
   end
+
 
   def spokenScore({player1, player2})
     when player1 >=4 and player2 < player1 do
