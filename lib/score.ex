@@ -1,6 +1,8 @@
 defmodule Score do
   @moduledoc false
 
+  import Winner
+
   def spokenScore(player1, player2)
     when player1 == player2 do
       speak(player1, player2, :equal)
@@ -10,20 +12,23 @@ defmodule Score do
     speak(player1, player2, :notequal)
   end
 
-
-  def speak(player1, player2, :equal)
+  def speak(player1, _, :equal)
       when player1 >= 3 do
     "deuce"
   end
 
-  def speak(player1, player2, :equal) do
+  def speak(player1, _, :equal) do
     "#{speakScore(player1)} all"
   end
 
+  def speak(player1, player2, :notequal)
+    when player1Win?(player1, player2) do
+     "player 1 win"
+  end
 
   def speak(player1, player2, :notequal)
-    when player1 >=4 and player2 < player1 do
-     "player 1 win"
+      when player2Win?(player1, player2) do
+    "player 2 win"
   end
 
   def speak(player1, player2, :notequal) do
@@ -38,4 +43,5 @@ defmodule Score do
       3 -> "forty"
     end
   end
+
 end
