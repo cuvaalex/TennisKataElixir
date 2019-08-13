@@ -31,4 +31,8 @@ defmodule ScoreTest do
     assert "fifteen all" == Score.spokenScore({1,1})
   end
 
+  test "Game score 2 to 2 then return thirty all" do
+    assert "thirty all" == Score.spokenScore({2,2})
+  end
+
 end
