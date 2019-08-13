@@ -3,8 +3,7 @@ defmodule Score do
 
   def spokenScore({player1, player2})
     when player1 == player2 do
-
-    "love all"
+    "#{speak(player1)} all"
   end
 
   def spokenScore({player1, player2})
@@ -12,12 +11,16 @@ defmodule Score do
      "player 1 win"
   end
 
-  def spokenScore({player1, player2}) do
-    score1 = case player1 do
+  def spokenScore({player1, _}) do
+    "#{speak(player1)} love"
+  end
+
+  defp speak(player) do
+    case player do
+      0 -> "love"
       1 -> "fifteen"
       2 -> "thirty"
       3 -> "forty"
     end
-    "#{score1} love"
   end
 end
