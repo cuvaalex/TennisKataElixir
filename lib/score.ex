@@ -17,8 +17,8 @@ defmodule Score do
      "player 1 win"
   end
 
-  def spokenScore({player1, _}) do
-    "#{speak(player1)} love"
+  def spokenScore({player1, player2}) do
+    "#{speak(player1)} #{speak(player2)}"
   end
 
   defp speak(player) do
